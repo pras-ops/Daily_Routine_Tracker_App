@@ -9,10 +9,10 @@ project_name = "DRTA"
 
 list_of_files = [
     ".github/workflows/.gitkeep",
-    f"src/{project_name}/__init__.py",
-    f"src/{project_name}/backend/__init__.py",
-    f"src/{project_name}/frontend/__init__.py",
-    f"src/{project_name}/tests/__init__.py",
+    f"__init__.py",
+    f"backend/__init__.py",
+    f"frontend/__init__.py",
+    f"tests/__init__.py",
     "requirements.txt",
     "setup.py",
     "app.py"
