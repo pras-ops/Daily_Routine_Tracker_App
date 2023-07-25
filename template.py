@@ -11,7 +11,6 @@ list_of_files = [
     ".github/workflows/.gitkeep",
     f"__init__.py",
     f"backend/__init__.py",
-    f"frontend/__init__.py",
     f"tests/__init__.py",
     "requirements.txt",
     "setup.py",
