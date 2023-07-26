@@ -1,4 +1,5 @@
 import sqlite3
+from logger import *
 
 
 def connect():
@@ -7,6 +8,7 @@ def connect():
     cur.execute("CREATE TABLE IF NOT EXISTS routine (Id INTEGER PRIMARY KEY , date text , earnings integer ,excercize text , study text , diet text , expense integer)")
     conn.commit()
     conn.close()
+    logging.info("Connection established")
     
 
 def insert(date,earnings,excercize,study,diet,expense):
@@ -15,6 +17,7 @@ def insert(date,earnings,excercize,study,diet,expense):
     cur.execute("INSERT INTO routine VALUES (NULL , ?,?,?,?,?,?)",(date,earnings,excercize,study,diet,expense))
     conn.commit()
     conn.close()
+    logging.info("Data Insersection intitalized")
 
 def view():
     conn=sqlite3.connect('routine.db')
@@ -23,7 +26,9 @@ def view():
     rows=cur.fetchall()
     conn.commit()
     conn.close()
+    logging.info("View intitalized")
     return(rows)
+
 
 def delete(id):
     conn=sqlite3.connect('routine.db')
@@ -31,6 +36,7 @@ def delete(id):
     cur.execute("DELETE FROM routine WHERE id=?",(id,))
     conn.commit()
     conn.close()
+    logging.info("Delete")
 
 def search(date='',earnings='',excercize='',study='',diet='',expense=''):
     conn=sqlite3.connect('routine.db')
@@ -39,9 +45,11 @@ def search(date='',earnings='',excercize='',study='',diet='',expense=''):
     rows=cur.fetchall()
     conn.commit()
     conn.close()
+    logging.info("Searched routine")
     return(rows)
 
-#connect()
+
+connect()
 #insert('2-3-20',200,'done','done','yes',300)
 #view()
 # insert('2-3-20',400,'done','done','yes',500)
