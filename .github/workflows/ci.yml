@@ -26,7 +26,10 @@ jobs:
         run: pip install pytest
 
       - name: Run tests
-        run: pytest tests/  # Update this line to point to the correct location of the test file
+        working-directory: Daily_Routine_Tracker_App
+        run: pytest tests/test.py
 
       - name: Lint code
+        working-directory: Daily_Routine_Tracker_App
         run: pylint backend/
+
