@@ -27,5 +27,5 @@ jobs:
         run: python -m unittest tests.test
 
       - name: Lint code
-        working-directory: Daily_Routine_Tracker_App
+        working-directory: tests/test.py
         run: pylint backend/
