@@ -26,7 +26,7 @@ jobs:
         run: pip install pytest
 
       - name: Run tests
-        run: pytest tests/
+        run: pytest tests/  # Update this line to point to the correct location of the test file
 
       - name: Lint code
         run: pylint backend/
