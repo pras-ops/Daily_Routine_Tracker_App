@@ -1,6 +1,9 @@
 from tkinter import *
 import backend.routine_backend as backend
 
+
+
+
 selected_row=[]
 def selected(event):
     global selected_row
@@ -19,6 +22,9 @@ def selected(event):
     e6.delete(0,END)
     e6.insert(END,selected_row[6])
     
+def connect_data():
+    backend.connect()
+
 def delete_cmd():
     backend.delete(selected_row[0])
 
@@ -36,6 +42,7 @@ def add_cmd():
     backend.insert(date_text.get(),earning_text.get(),excercise_text.get(),study_text.get(),diet_text.get(),expense_text.get())
     list.delete(0,END)
     list.insert(END,(date_text.get(),earning_text.get(),excercise_text.get(),study_text.get(),diet_text.get(),expense_text.get()))
+
 
 win = Tk()
 
@@ -108,6 +115,8 @@ b4.grid(row=6,column=3)
 b5=Button(win,text='CLOSE',width=12,pady=5,command=win.destroy, bg="white", fg="blue", font="Lato 12", borderwidth=2, relief="groove")
 b5.grid(row=7,column=3)
 
+b5=Button(win,text='Connect',width=12,pady=5,command=connect_data, bg="white", fg="blue", font="Lato 12", borderwidth=2, relief="groove")
+b5.grid(row=7,column=3)
 
 win.mainloop()
 

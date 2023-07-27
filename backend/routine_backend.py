@@ -48,8 +48,6 @@ def search(date='',earnings='',excercize='',study='',diet='',expense=''):
     logging.info("Searched routine")
     return(rows)
 
-
-connect()
 #insert('2-3-20',200,'done','done','yes',300)
 #view()
 # insert('2-3-20',400,'done','done','yes',500)
